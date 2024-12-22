@@ -1,0 +1,17 @@
+{
+  "books": [
+    { "id": 1, "title": "雨ニモマケズ", "author": "宮沢 賢治" },
+    { "id": 1, "title": "走れメロス", "author": "太宰 治" },
+    { "id": 1, "title": "こころ", "author": "夏目 漱石" },
+    { "id": 1, "title": "山月記", "author": "中島 敦" },
+    { "id": 1, "title": "羅生門", "author": "芥川 竜之介" },
+    { "id": 1, "title": "銀河鉄道の夜", "author": "宮沢 賢治" },
+    { "id": 1, "title": "吾輩は猫である", "author": "夏目 漱石" },
+    { "id": 1, "title": "夢十夜", "author": "夏目 漱石" },
+    { "id": 1, "title": "やまなし", "author": "宮沢 賢治" },
+    { "id": 1, "title": "人間失格", "author": "太宰 治" },
+    { "id": 2, "title": "サンショウウオの四十九日", "author": "朝比奈 秋" },
+    { "id": 2, "title": "バリ山行", "author": "松永K三蔵" },
+    { "id": 2, "title": "ツミデミック", "author": "一穂ミチ" }
+  ]
+}

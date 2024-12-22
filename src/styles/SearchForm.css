@@ -1,0 +1,35 @@
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #a156a8;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 500px;
+}
+.search-input:focus {
+  outline: 2px solid #a156a8; /* 紫色の枠に変更する例 */
+  outline-offset: 1px; /* 枠とinputの間隔 */
+}
+.search-button {
+  padding: 10px 20px;
+  /* background-color: #4a90e2; */
+  background-color: #7169d6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-button:hover {
+  background-color: #584ba3;
+}
