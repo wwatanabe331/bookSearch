@@ -46,20 +46,22 @@ function SearchPage({ selectedRanking }) {
         selectedBooks.map((book) =>
           fetch(
             // ここid検索でもいい
-            `https://www.googleapis.com/books/v1/volumes?q=` +
-              `intitle:"${encodeURIComponent(book.title)}"` +
-              `+inauthor:"${encodeURIComponent(book.author)}"` +
-              "&langRestrict=ja&maxResults=1"
+            // `https://www.googleapis.com/books/v1/volumes?q=` +
+            //   `intitle:"${encodeURIComponent(book.title)}"` +
+            //   `+inauthor:"${encodeURIComponent(book.author)}"` +
+            //   "&langRestrict=ja&maxResults=1"
+            `https://www.googleapis.com/books/v1/volumes/${book.book_id}`
           )
             .then((res) => res.json())
-            .then((data) => {
-              //   console.log(`検索結果 for ${book.title}:`, data);
-              return data.items?.[0];
+            .then((data) => data)
+            .catch((error) => {
+              console.error(`Error fetching book ${book.title}:`, error);
+              return null;
             })
         )
       );
 
-      const validResults = results.filter((book) => book != null); // nullを消す
+      const validResults = results.filter((book) => book != null);
       setBooks(validResults);
       setTotalItems(validResults.length);
       setCurrentPage(1);
