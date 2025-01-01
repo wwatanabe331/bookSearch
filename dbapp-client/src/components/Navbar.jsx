@@ -1,14 +1,16 @@
-import { Link } from "react-router-dom";
-import { Home, BookMarked, Lightbulb } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { Home, BookMarked, Lightbulb, LogIn, LogOut } from "lucide-react";
 import "../styles/Navbar.css";
 import { useState } from "react";
 
-function Navbar({ onRankingSelect }) {
+function Navbar({ user, onLogout, onRankingSelect }) {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleSelect = (rankingId) => {
     onRankingSelect(rankingId);
     setIsOpen(false);
+    navigate("/");
   };
 
   return (
@@ -37,6 +39,17 @@ function Navbar({ onRankingSelect }) {
           </div>
         )}
       </div>
+      {user ? (
+        <button onClick={onLogout} className="nav-link">
+          <LogOut size={20} />
+          <span>ログアウト</span>
+        </button>
+      ) : (
+        <Link to="/login" className="nav-link">
+          <LogIn size={20} />
+          <span>ログイン</span>
+        </Link>
+      )}
     </nav>
   );
 }

@@ -16,8 +16,8 @@
   max-width: 500px;
 }
 .search-input:focus {
-  outline: 2px solid #a156a8; /* 紫色の枠に変更する例 */
-  outline-offset: 1px; /* 枠とinputの間隔 */
+  outline: 2px solid #a156a8;
+  outline-offset: 1px;
 }
 .search-button {
   padding: 10px 20px;

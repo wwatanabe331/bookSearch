@@ -1,4 +1,3 @@
-// src/hooks/useGoogleBooks.jsx
 import { useState } from "react";
 
 export const useGoogleBooks = () => {

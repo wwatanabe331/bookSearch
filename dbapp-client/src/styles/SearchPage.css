@@ -1,0 +1,22 @@
+/* src/styles/SearchPage.css */
+.book-grid,
+.wishlist-grid {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 共通のユーティリティクラス */
+.loading,
+.error,
+.no-results {
+  text-align: center;
+  margin: 20px;
+}
+
+.error {
+  color: #8d4886;
+}

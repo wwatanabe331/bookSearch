@@ -1,6 +1,12 @@
 import "../styles/BookCard.css";
 
-function BookCard({ book }) {
+function BookCard({
+  book,
+  user,
+  onAddToWishlist,
+  onRemoveFromWishlist,
+  isInWishlist,
+}) {
   // 大学の図書館用のURL
   const getCalilSearchUrl = () => {
     const title = book.volumeInfo?.title || "";
@@ -28,6 +34,26 @@ function BookCard({ book }) {
   };
 
   const readButton = getReadButton();
+
+  const handleWishlistAction = () => {
+    if (isInWishlist) {
+      console.log("削除:", {
+        学生証番号: user.学生証番号,
+        書籍ID: book.id,
+      });
+      onRemoveFromWishlist(book.id);
+    } else {
+      console.log("追加:", {
+        学生証番号: user.学生証番号,
+        書籍ID: book.id,
+        タイトル: book.volumeInfo.title,
+      });
+      onAddToWishlist({
+        書籍ID: book.id,
+        タイトル: book.volumeInfo.title,
+      });
+    }
+  };
 
   return (
     <div className="book-card">
@@ -61,7 +87,9 @@ function BookCard({ book }) {
               {readButton.text}
             </a>
           )}
-          <button className="add-button">読みたいに追加</button>
+          <button className="add-button" onClick={handleWishlistAction}>
+            {isInWishlist ? "削除" : "読みたいに追加"}
+          </button>
           <a
             href={getCalilSearchUrl()}
             target="_blank"
